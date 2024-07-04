@@ -1,10 +1,13 @@
-'Use Strict';
 function nums(array) {
     for (let i = 0; i < array.length; i++) {
         let numeros = '';
         for (let j = i + 1; j < array.length; j++) {
             let resultado = array[i] + "" + array[j];
-            numeros += resultado.padStart (2, '0') + ' ';
+            if (resultado < 10) {
+                numeros += '0' + resultado + ' ';
+            } else {
+                numeros += resultado + ' ';
+            }
         }
         alert(numeros);
     }
